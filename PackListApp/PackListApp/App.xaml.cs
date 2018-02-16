@@ -15,7 +15,7 @@ namespace PackListApp
 		{
 			InitializeComponent();
 
-			MainPage = new PackListApp.MainPage();
+			MainPage = new NavigationPage(new UserPackList());
 		}
 
 		protected override void OnStart ()

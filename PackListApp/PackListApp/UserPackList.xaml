@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PackListApp.UserPackList"
+             Padding="0,20,0,0"
+             Title="Easypacking lists">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Order="Primary" Icon="plus.png" Clicked="Add_OnClicked"></ToolbarItem>
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        
+        <StackLayout>
+            <ListView x:Name="MyListView" 
+                      ItemSelected="MyListView_OnItemSelected"
+                      IsPullToRefreshEnabled="True"
+                      Refreshing="MyListView_OnRefreshing">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" Padding="5">
+                                <Image></Image>
+                                <Label></Label>
+                            </StackLayout>
+                            <ViewCell.ContextActions>
+                                <MenuItem Text="Delete" Clicked="Delete_OnClicked" 
+                                          IsDestructive="True"></MenuItem>
+                            </ViewCell.ContextActions>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
