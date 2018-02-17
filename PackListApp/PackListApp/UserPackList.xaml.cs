@@ -20,17 +20,17 @@ namespace PackListApp
 
 	    private void MyListView_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
 	    {
-	        throw new NotImplementedException();
+	        
 	    }
 
 	    private void MyListView_OnRefreshing(object sender, EventArgs e)
 	    {
-	        throw new NotImplementedException();
+	        
 	    }
 
 	    private void Delete_OnClicked(object sender, EventArgs e)
 	    {
-	        throw new NotImplementedException();
+	        
 	    }
 
 

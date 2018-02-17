@@ -24,12 +24,12 @@ namespace PackListApp
 
 		private void MyOwnBtn_OnClicked(object sender, EventArgs e)
 		{
-			throw new NotImplementedException();
+			
 		}
 
 		private void NewBlankBtn_OnClicked(object sender, EventArgs e)
 		{
-			throw new NotImplementedException();
+			
 		}
 	}
 }

@@ -5,7 +5,7 @@
              Padding="0,20,0,0"
              Title="Easypacking">
     <ContentPage.ToolbarItems>
-        <ToolbarItem Order="Primary" Icon="plus.png" Clicked="Add_OnClicked"></ToolbarItem>
+        <ToolbarItem Order="Primary" Text="Plus" Clicked="Add_OnClicked"></ToolbarItem>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>

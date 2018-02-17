@@ -4,10 +4,25 @@
              x:Class="PackListApp.OptionQuickie"
              Title="Quickies">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+            <Grid BackgroundColor="Yellow" RowSpacing="40" ColumnSpacing="40">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="100"></RowDefinition>
+                    <RowDefinition Height="*"></RowDefinition>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"></ColumnDefinition>
+                    <ColumnDefinition Width="*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Row="0" Grid.Column="0" Text="Sun" Style="{StaticResource ColorSun}"
+                        ></Button>
+                <Button Grid.Row="0" Grid.Column="1" Text="Snow" Style="{StaticResource ColorSnow}"
+                        ></Button>
+                <Button Grid.Row="1" Grid.Column="0" Text="City" Style="{StaticResource ColorCity}"
+                        ></Button>
+                <Button Grid.Row="1" Grid.Column="1" Text="Trekking" Style="{StaticResource ColorTrekking}"
+                        ></Button>
+            </Grid>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
