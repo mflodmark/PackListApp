@@ -4,9 +4,11 @@
              x:Class="PackListApp.Options"
              Title="New List">
     <ContentPage.Resources>
-        <Style TargetType="Button">
-            <Setter Property="BorderRadius" Value="10"></Setter>
-        </Style>
+        <ResourceDictionary>
+            <Style TargetType="Button">
+                <Setter Property="BorderRadius" Value="10"></Setter>
+            </Style>
+        </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">

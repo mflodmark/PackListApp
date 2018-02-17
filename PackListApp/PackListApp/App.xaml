@@ -3,17 +3,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PackListApp.App">
 	<Application.Resources>
-	    <Style x:Key="ColorSun" TargetType="Button">
-            <Setter Property="BackgroundColor" Value="#ffa801"></Setter>
-	    </Style>
-	    <Style x:Key="ColorSnow" TargetType="Button">
-            <Setter Property="BackgroundColor" Value="#0fbcf9"></Setter>
-	    </Style>
-	    <Style x:Key="ColorCity" TargetType="Button">
-            <Setter Property="BackgroundColor" Value="#808e9b"></Setter>
-	    </Style>
-	    <Style x:Key="ColorTrekking" TargetType="Button">
-            <Setter Property="BackgroundColor" Value="#05c46b"></Setter>
-	    </Style>
+        <ResourceDictionary>
+            <Style x:Key="ColorSun" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#ffa801"></Setter>
+            </Style>
+            <Style x:Key="ColorSnow" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#0fbcf9"></Setter>
+            </Style>
+            <Style x:Key="ColorCity" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#808e9b"></Setter>
+            </Style>
+            <Style x:Key="ColorTrekking" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="#05c46b"></Setter>
+            </Style>
+        </ResourceDictionary>
     </Application.Resources>
 </Application>
