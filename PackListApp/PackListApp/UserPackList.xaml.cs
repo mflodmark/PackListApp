@@ -34,9 +34,9 @@ namespace PackListApp
 	    }
 
 
-	    private void Add_OnClicked(object sender, EventArgs e)
+	    private async void Add_OnClicked(object sender, EventArgs e)
 	    {
-	        throw new NotImplementedException();
-	    }
+	        await Navigation.PushAsync(new Options());
+        }
 	}
 }

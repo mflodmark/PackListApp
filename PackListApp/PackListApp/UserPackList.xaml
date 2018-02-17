@@ -3,12 +3,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="PackListApp.UserPackList"
              Padding="0,20,0,0"
-             Title="Easypacking lists">
+             Title="Easypacking">
     <ContentPage.ToolbarItems>
         <ToolbarItem Order="Primary" Icon="plus.png" Clicked="Add_OnClicked"></ToolbarItem>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        
         <StackLayout>
             <ListView x:Name="MyListView" 
                       ItemSelected="MyListView_OnItemSelected"

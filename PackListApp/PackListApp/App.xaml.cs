@@ -15,7 +15,11 @@ namespace PackListApp
 		{
 			InitializeComponent();
 
-			MainPage = new NavigationPage(new UserPackList());
+			MainPage = new NavigationPage(new UserPackList())
+			{
+			    BarBackgroundColor = Color.FromHex("#82ccdd"),
+			    BarTextColor = Color.White
+            };
 		}
 
 		protected override void OnStart ()
