@@ -16,8 +16,8 @@
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
-            <Button Text="Select" HorizontalOptions="CenterAndExpand" BackgroundColor="#ef5777"
-                    TextColor="White"></Button>
+            <Button Text="Select" HorizontalOptions="FillAndExpand" Style="{StaticResource ButtonTheme}"
+                    BorderRadius="0"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

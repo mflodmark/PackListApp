@@ -16,5 +16,24 @@ namespace PackListApp
 		{
 			InitializeComponent ();
 		}
+
+	    private void SunBtn_OnClicked(object sender, EventArgs e)
+	    {
+            
+	        PushToList();
+	    }
+
+	    private void SnowBtn_OnClicked(object sender, EventArgs e)
+	    {
+
+	        PushToList();
+        }
+
+
+
+        private async void PushToList()
+	    {
+	        await Navigation.PushAsync(new ListQuickie());
+        }
 	}
 }

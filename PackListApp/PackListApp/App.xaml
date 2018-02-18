@@ -9,18 +9,22 @@
             <Style x:Key="ColorSun" TargetType="Button">
                 <Setter Property="BackgroundColor" Value="#ffa801"></Setter>
                 <Setter Property="TextColor" Value="{StaticResource OptionTextColor}"></Setter>
+                <Setter Property="BorderRadius" Value="10"></Setter>
             </Style>
             <Style x:Key="ColorSnow" TargetType="Button">
                 <Setter Property="BackgroundColor" Value="#0fbcf9"></Setter>
                 <Setter Property="TextColor" Value="{StaticResource OptionTextColor}"></Setter>
+                <Setter Property="BorderRadius" Value="10"></Setter>
             </Style>
             <Style x:Key="ColorCity" TargetType="Button">
                 <Setter Property="BackgroundColor" Value="#808e9b"></Setter>
                 <Setter Property="TextColor" Value="{StaticResource OptionTextColor}"></Setter>
+                <Setter Property="BorderRadius" Value="10"></Setter>
             </Style>
             <Style x:Key="ColorTrekking" TargetType="Button">
                 <Setter Property="BackgroundColor" Value="#05c46b"></Setter>
                 <Setter Property="TextColor" Value="{StaticResource OptionTextColor}"></Setter>
+                <Setter Property="BorderRadius" Value="10"></Setter>
             </Style>
             <Style x:Key="ColorTheme" TargetType="ContentPage">
                 <Setter Property="BackgroundColor" Value="#575fcf"></Setter>
@@ -29,6 +33,13 @@
                 <Setter Property="RowSpacing" Value="40"></Setter>
                 <Setter Property="ColumnSpacing" Value="40"></Setter>
                 <Setter Property="Padding" Value="20"></Setter>
+            </Style>
+            <Style x:Key="ButtonTheme" TargetType="Button">
+                <Setter Property="BorderRadius" Value="10"></Setter>
+                <Setter Property="BackgroundColor" Value="#ef5777"></Setter>
+                <Setter Property="TextColor" Value="{StaticResource OptionTextColor}"></Setter>
+                <Setter Property="FontSize" Value="20"></Setter>
+                <Setter Property="FontAttributes" Value="Bold"></Setter>
             </Style>
         </ResourceDictionary>
     </Application.Resources>

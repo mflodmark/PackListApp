@@ -19,6 +19,7 @@
       <DependentUpon>ListQuickie.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Quickies.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)OptionQuickie.xaml.cs">
       <DependentUpon>OptionQuickie.xaml</DependentUpon>
       <SubType>Code</SubType>

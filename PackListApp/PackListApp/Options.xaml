@@ -4,15 +4,6 @@
              x:Class="PackListApp.Options"
              Title="New List"
              Style="{StaticResource ColorTheme}">
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <Style TargetType="Button">
-                <Setter Property="BorderRadius" Value="10"></Setter>
-                <Setter Property="BackgroundColor" Value="#ef5777"></Setter>
-                <Setter Property="TextColor" Value="White"></Setter>
-            </Style>
-        </ResourceDictionary>
-    </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
             <Grid Style="{StaticResource GridStyle}">
@@ -24,12 +15,12 @@
                     <ColumnDefinition Width="100"></ColumnDefinition>
                     <ColumnDefinition Width="100"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Button Grid.Row="0" Grid.Column="0" Text="New Quickie"
-                        Clicked="QuickBtn_OnClicked"></Button>
+                <Button Grid.Row="0" Grid.Column="0" Text="Quickie"
+                        Clicked="QuickBtn_OnClicked" Style="{StaticResource ButtonTheme}"></Button>
                 <Button Grid.Row="0" Grid.Column="1" Text="My Own"
-                        Clicked="MyOwnBtn_OnClicked"></Button>
-                <Button Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="New Blank"
-                        Clicked="NewBlankBtn_OnClicked"></Button>
+                        Clicked="MyOwnBtn_OnClicked" Style="{StaticResource ButtonTheme}"></Button>
+                <Button Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Text="Blank"
+                        Clicked="NewBlankBtn_OnClicked" Style="{StaticResource ButtonTheme}"></Button>
             </Grid>
         </StackLayout>
     </ContentPage.Content>
