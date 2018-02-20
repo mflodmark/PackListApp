@@ -1,9 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using PackListApp.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -12,15 +13,18 @@ namespace PackListApp
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class OptionQuickie : ContentPage
 	{
-		public OptionQuickie ()
+	    private readonly ObservableCollection<Quickies> _quickies;
+
+	    public OptionQuickie (ObservableCollection<Quickies> quickies)
 		{
 			InitializeComponent ();
+
+		    _quickies = quickies;
 		}
 
 	    private void SunBtn_OnClicked(object sender, EventArgs e)
 	    {
-            
-	        PushToList();
+            PushToList();
 	    }
 
 	    private void SnowBtn_OnClicked(object sender, EventArgs e)
@@ -33,7 +37,21 @@ namespace PackListApp
 
         private async void PushToList()
 	    {
-	        await Navigation.PushAsync(new ListQuickie());
+	        try
+	        {
+	            await Navigation.PushAsync(new ListQuickie(_quickies));
+            }
+            catch (Exception e)
+	        {
+	            Console.WriteLine(e);
+	            await DisplayAlert("Error", "Can't access page", "Ok");
+	        }
         }
+
+	    private void Snow_OnTapped(object sender, EventArgs e)
+	    {
+	        PushToList();
+	    }
+
 	}
 }

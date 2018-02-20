@@ -12,7 +12,7 @@
                         <ViewCell>
                             <StackLayout Orientation="Horizontal" Padding="5" 
                                          HorizontalOptions="Center" VerticalOptions="Center">
-                                <Label Text="{Binding Item}" TextColor="{Binding }"></Label>
+                                <Label Text="{Binding Item}" TextColor="{StaticResource OptionTextColor}"></Label>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>

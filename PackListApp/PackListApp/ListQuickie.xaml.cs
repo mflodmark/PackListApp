@@ -13,9 +13,13 @@ namespace PackListApp
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ListQuickie : ContentPage
 	{
-		public ListQuickie ()
+	    private ObservableCollection<Quickies> _quickies;
+
+	    public ListQuickie (ObservableCollection<Quickies> quickies)
 		{
 			InitializeComponent ();
+
+		    _quickies = quickies;
 
 		    var quickie = new Quickies();
 
@@ -33,8 +37,7 @@ namespace PackListApp
 
 	    private async void Button_OnClicked(object sender, EventArgs e)
 	    {
-
-
+            
             await Navigation.PopToRootAsync();
 	    }
 	}

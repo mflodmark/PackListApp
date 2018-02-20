@@ -14,18 +14,21 @@ namespace PackListApp
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class UserPackList : ContentPage
 	{
-		public UserPackList ()
+	    private ObservableCollection<Quickies> _quickies;
+
+        public UserPackList ()
 		{
             //BindingContext = new UserPackListViewModel();
 
             InitializeComponent();
 
 		    //BindingContext = GetQuickies();
-		    MyListView.ItemsSource = GetQuickies();
+		    _quickies = GetQuickies();
+		    MyListView.ItemsSource = _quickies;
 
-            //MyListView.ItemsSource = new ObservableCollection<Quickies>();
+		    //MyListView.ItemsSource = new ObservableCollection<Quickies>();
 
-        }
+		}
 
 	    public ObservableCollection<Quickies> GetQuickies()
 	    {
@@ -63,7 +66,7 @@ namespace PackListApp
 
 	    private async void Add_OnClicked(object sender, EventArgs e)
 	    {
-            await Navigation.PushAsync(new Options());
+            await Navigation.PushAsync(new Options(_quickies));
         }
 
 	    private void MyListView_OnItemTapped(object sender, ItemTappedEventArgs e)

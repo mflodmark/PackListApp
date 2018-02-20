@@ -6,26 +6,22 @@
         <ResourceDictionary>
             <Color x:Key="OptionTextColor">White</Color>
             <Color x:Key="ListSeperatorColor">#82ccdd</Color>
-            
+
             <Style x:Key="ColorSun" TargetType="Button">
                 <Setter Property="BackgroundColor" Value="#ffa801"></Setter>
-                <Setter Property="TextColor" Value="{StaticResource OptionTextColor}"></Setter>
                 <Setter Property="BorderRadius" Value="10"></Setter>
-                
             </Style>
             <Style x:Key="ColorSnow" TargetType="Button">
                 <Setter Property="BackgroundColor" Value="#0fbcf9"></Setter>
-                <Setter Property="TextColor" Value="{StaticResource OptionTextColor}"></Setter>
                 <Setter Property="BorderRadius" Value="10"></Setter>
+                <Setter Property="ContentLayout" Value="top, 5"></Setter>
             </Style>
             <Style x:Key="ColorCity" TargetType="Button">
                 <Setter Property="BackgroundColor" Value="#808e9b"></Setter>
-                <Setter Property="TextColor" Value="{StaticResource OptionTextColor}"></Setter>
                 <Setter Property="BorderRadius" Value="10"></Setter>
             </Style>
             <Style x:Key="ColorTrekking" TargetType="Button">
                 <Setter Property="BackgroundColor" Value="#05c46b"></Setter>
-                <Setter Property="TextColor" Value="{StaticResource OptionTextColor}"></Setter>
                 <Setter Property="BorderRadius" Value="10"></Setter>
             </Style>
             <Style x:Key="ColorTheme" TargetType="ContentPage">
