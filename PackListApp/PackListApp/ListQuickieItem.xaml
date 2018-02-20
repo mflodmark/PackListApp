@@ -1,19 +1,14 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PackListApp.UserPackList"
-             Title="Easypacking">
+             x:Class="PackListApp.ListQuickieItem"
+             Title="{Binding Title}">
     <ContentPage.ToolbarItems>
         <ToolbarItem Icon="plus.png" Clicked="Add_OnClicked" Priority="0" Order="Primary"></ToolbarItem>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
             <ListView x:Name="MyListView" 
-                      ItemSelected="MyListView_OnItemSelected"
-                      ItemTapped="MyListView_OnItemTapped"
-                      IsPullToRefreshEnabled="True"
-                      Refreshing="MyListView_OnRefreshing"
                       Style="{StaticResource ColorTheme}"
                       SeparatorColor="{StaticResource ListSeperatorColor}">
                 <ListView.ItemTemplate>
@@ -21,8 +16,7 @@
                         <ViewCell>
                             <StackLayout Orientation="Horizontal" Padding="5" 
                                          VerticalOptions="Center">
-                                <Image></Image>
-                                <Label Text="{Binding Title}" Style="{StaticResource LabelListView}"></Label>
+                                <Label Text="{Binding Item}" Style="{StaticResource LabelListView}"></Label>
                             </StackLayout>
                             <ViewCell.ContextActions>
                                 <MenuItem Text="Delete" Clicked="Delete_OnClicked" 

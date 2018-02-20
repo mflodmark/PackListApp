@@ -4,6 +4,14 @@
              x:Class="PackListApp.OptionQuickie"
              Title="Quickies"
              Style="{StaticResource ColorTheme}">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <!--<FileImageSource x:Key="SunImg">"icons8-sun-100.png"</FileImageSource>
+            <Image x:Key="WinterImg" Source="icons8-winter-100.png"></Image>
+            <Image x:Key="CityImg" Source="icons8-city-100.png"></Image>
+            <Image x:Key="TrekkingImg" Source="icons8-trekking-100.png"></Image>-->
+        </ResourceDictionary>
+    </ContentPage.Resources>
     <ContentPage.Content>
         <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
             <Grid Style="{StaticResource GridStyle}">
@@ -15,14 +23,14 @@
                     <ColumnDefinition Width="100"></ColumnDefinition>
                     <ColumnDefinition Width="100"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Button Grid.Row="0" Grid.Column="0" Text="Sun" Style="{StaticResource ColorSun}"
+                <Button Grid.Row="0" Grid.Column="0" Image="icons8-sun-100.png" Style="{StaticResource ColorSun}"
                         Clicked="SunBtn_OnClicked"></Button>
                 <Button Grid.Row="0" Grid.Column="1" Text="Snow" Style="{StaticResource ColorSnow}"
-                        Clicked="SnowBtn_OnClicked"></Button>
+                        Clicked="SnowBtn_OnClicked" Image="icons8-winter-100.png"></Button>
                 <Button Grid.Row="1" Grid.Column="0" Text="City" Style="{StaticResource ColorCity}"
-                        ></Button>
+                        Image="icons8-city-100.png"></Button>
                 <Button Grid.Row="1" Grid.Column="1" Text="Trekking" Style="{StaticResource ColorTrekking}"
-                        ></Button>
+                        Image="icons8-trekking-100.png"></Button>
             </Grid>
         </StackLayout>
     </ContentPage.Content>

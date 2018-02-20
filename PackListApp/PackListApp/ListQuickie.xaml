@@ -1,23 +1,25 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PackListApp.ListQuickie">
+             x:Class="PackListApp.ListQuickie"
+             Style="{StaticResource ColorTheme}">
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="MyListView">
+            <ListView x:Name="QuickieListView" Style="{StaticResource ColorTheme}" 
+                      SeparatorColor="{StaticResource ListSeperatorColor}">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout Orientation="Horizontal" Padding="5">
-                                <Image></Image>
-                                <Label></Label>
+                            <StackLayout Orientation="Horizontal" Padding="5" 
+                                         HorizontalOptions="Center" VerticalOptions="Center">
+                                <Label Text="{Binding Item}" TextColor="{Binding }"></Label>
                             </StackLayout>
                         </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
             <Button Text="Select" HorizontalOptions="FillAndExpand" Style="{StaticResource ButtonTheme}"
-                    BorderRadius="0"></Button>
+                    BorderRadius="0" Clicked="Button_OnClicked"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

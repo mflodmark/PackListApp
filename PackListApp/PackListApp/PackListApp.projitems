@@ -19,6 +19,11 @@
       <DependentUpon>ListQuickie.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ListQuickieItem.xaml.cs">
+      <DependentUpon>ListQuickieItem.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Models\QuickieItem.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Quickies.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)OptionQuickie.xaml.cs">
       <DependentUpon>OptionQuickie.xaml</DependentUpon>
@@ -32,6 +37,8 @@
       <DependentUpon>UserPackList.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\BaseViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\UserPackListViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)UserPackList.xaml">
@@ -53,6 +60,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)ListQuickie.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)ListQuickieItem.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
