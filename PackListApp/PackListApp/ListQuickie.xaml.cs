@@ -37,7 +37,19 @@ namespace PackListApp
 
 	    private async void Button_OnClicked(object sender, EventArgs e)
 	    {
-            
+	        var quickie = new Quickies();
+
+	        var list = new ObservableCollection<QuickieItem>()
+	        {
+	            new QuickieItem() {Item = "Hat"},
+	            new QuickieItem() {Item = "Gloves"}
+	        };
+
+	        quickie.Items = list;
+	        quickie.Title = "Test";
+
+            _quickies.Add(quickie);
+
             await Navigation.PopToRootAsync();
 	    }
 	}
