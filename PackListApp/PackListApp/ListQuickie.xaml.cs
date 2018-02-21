@@ -14,6 +14,7 @@ namespace PackListApp
 	public partial class ListQuickie : ContentPage
 	{
 	    private ObservableCollection<Quickies> _quickies;
+	    private string _titel;
 
 	    public ListQuickie (ObservableCollection<Quickies> quickies)
 		{
@@ -37,7 +38,7 @@ namespace PackListApp
 	    private async void Button_OnClicked(object sender, EventArgs e)
 	    {
 
-	        if (ListName.Text.Length > 0)
+	        if (_titel.Length > 0)
 	        {
 	            await DisplayAlert("Missing Title", "Please enter a title", "Ok");
 	        }
@@ -52,7 +53,7 @@ namespace PackListApp
 	            };
 
 	            quickie.Items = list;
-	            quickie.Title = ListName.Text;
+	            quickie.Title = _titel;
 
 	            _quickies.Add(quickie);
 
@@ -61,5 +62,9 @@ namespace PackListApp
             
 	    }
 
+	    private void Entry_OnTextChanged(object sender, TextChangedEventArgs e)
+	    {
+	        _titel = e.NewTextValue;
+	    }
 	}
 }

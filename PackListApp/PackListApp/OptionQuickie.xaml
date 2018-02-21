@@ -23,10 +23,15 @@
                     <ColumnDefinition Width="110"></ColumnDefinition>
                     <ColumnDefinition Width="110"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <Button Grid.Row="0" Grid.Column="0" Style="{StaticResource ColorSun}"
-                        Clicked="SunBtn_OnClicked" Image="icons8-sun-100.png"></Button>
-                <Button Grid.Row="0" Grid.Column="1" Style="{StaticResource ColorSnow}"
-                        ></Button>
+                <Button Grid.Row="0" Grid.Column="0" Style="{StaticResource ColorSun}"></Button>
+                <Image Grid.Row="0" Grid.Column="0" Source="icons8-sun-100.png">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped="SunBtn_OnClicked"
+                            NumberOfTapsRequired="1" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Button Grid.Row="0" Grid.Column="1" Style="{StaticResource ColorSnow}"></Button>
                 <Image Grid.Row="0" Grid.Column="1" Source="icons8-winter-100.png">
                     <Image.GestureRecognizers>
                         <TapGestureRecognizer
@@ -34,10 +39,22 @@
                             NumberOfTapsRequired="1" />
                     </Image.GestureRecognizers>
                 </Image>
-                <Button Grid.Row="1" Grid.Column="0" Style="{StaticResource ColorCity}"
-                        Image="icons8-city-100.png"></Button>
-                <Button Grid.Row="1" Grid.Column="1" Style="{StaticResource ColorTrekking}"
-                        Image="icons8-trekking-100.png"></Button>
+                <Button Grid.Row="1" Grid.Column="0" Style="{StaticResource ColorCity}"></Button>
+                <Image Grid.Row="1" Grid.Column="0" Source="icons8-city-100.png">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped="Snow_OnTapped"
+                            NumberOfTapsRequired="1" />
+                    </Image.GestureRecognizers>
+                </Image>
+                <Button Grid.Row="1" Grid.Column="1" Style="{StaticResource ColorTrekking}"></Button>
+                <Image Grid.Row="1" Grid.Column="1" Source="icons8-trekking-100.png">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer
+                            Tapped="Snow_OnTapped"
+                            NumberOfTapsRequired="1" />
+                    </Image.GestureRecognizers>
+                </Image>
             </Grid>
         </StackLayout>
     </ContentPage.Content>

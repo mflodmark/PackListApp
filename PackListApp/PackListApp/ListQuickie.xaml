@@ -5,7 +5,9 @@
              Style="{StaticResource ColorTheme}">
     <ContentPage.Content>
         <StackLayout>
-            <Entry x:Name="ListName" Placeholder="Enter list name..."></Entry>
+            <Entry Placeholder="Enter list name..." TextChanged="Entry_OnTextChanged" 
+                   VerticalOptions="CenterAndExpand"></Entry>
+
             <ListView x:Name="QuickieListView" Style="{StaticResource ColorTheme}" 
                       SeparatorColor="{StaticResource ListSeperatorColor}">
                 <ListView.ItemTemplate>
