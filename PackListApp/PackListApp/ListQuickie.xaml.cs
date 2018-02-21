@@ -29,7 +29,6 @@ namespace PackListApp
                 new QuickieItem() {Item = "Gloves"}
             };
 
-
 		    quickie.Items = list;
 
 		    QuickieListView.ItemsSource = quickie.Items;
@@ -37,20 +36,30 @@ namespace PackListApp
 
 	    private async void Button_OnClicked(object sender, EventArgs e)
 	    {
-	        var quickie = new Quickies();
 
-	        var list = new ObservableCollection<QuickieItem>()
+	        if (ListName.Text.Length > 0)
 	        {
-	            new QuickieItem() {Item = "Hat"},
-	            new QuickieItem() {Item = "Gloves"}
-	        };
+	            await DisplayAlert("Missing Title", "Please enter a title", "Ok");
+	        }
+	        else
+	        {
+	            var quickie = new Quickies();
 
-	        quickie.Items = list;
-	        quickie.Title = "Test";
+	            var list = new ObservableCollection<QuickieItem>()
+	            {
+	                new QuickieItem() {Item = "Hat"},
+	                new QuickieItem() {Item = "Gloves"}
+	            };
 
-            _quickies.Add(quickie);
+	            quickie.Items = list;
+	            quickie.Title = ListName.Text;
 
-            await Navigation.PopToRootAsync();
+	            _quickies.Add(quickie);
+
+	            await Navigation.PopToRootAsync();
+            }
+            
 	    }
+
 	}
 }
