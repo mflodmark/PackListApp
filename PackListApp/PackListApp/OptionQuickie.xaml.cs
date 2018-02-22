@@ -43,7 +43,6 @@ namespace PackListApp
             }
             catch (Exception e)
 	        {
-	            Console.WriteLine(e);
 	            await DisplayAlert("Error", "Can't access page", "Ok");
 	        }
         }
