@@ -13,7 +13,7 @@ namespace PackListApp
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class ListQuickie : ContentPage
 	{
-	    private ObservableCollection<Quickies> _quickies;
+	    private readonly ObservableCollection<Quickies> _quickies;
 	    private string _titel;
 
 	    public ListQuickie (ObservableCollection<Quickies> quickies)
@@ -38,7 +38,7 @@ namespace PackListApp
 	    private async void Button_OnClicked(object sender, EventArgs e)
 	    {
 
-	        if (_titel.Length > 0)
+	        if (_titel.Length == 0)
 	        {
 	            await DisplayAlert("Missing Title", "Please enter a title", "Ok");
 	        }
