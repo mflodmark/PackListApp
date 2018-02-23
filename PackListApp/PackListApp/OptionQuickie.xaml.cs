@@ -41,7 +41,7 @@ namespace PackListApp
 	        {
 	            await Navigation.PushAsync(new ListQuickie(_quickies));
             }
-            catch (Exception e)
+            catch (Exception)
 	        {
 	            await DisplayAlert("Error", "Can't access page", "Ok");
 	        }
