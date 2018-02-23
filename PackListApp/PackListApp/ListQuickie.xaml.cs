@@ -14,7 +14,7 @@ namespace PackListApp
 	public partial class ListQuickie : ContentPage
 	{
 	    private readonly ObservableCollection<Quickies> _quickies;
-	    private string _titel;
+	    private string _titel = "";
 
 	    public ListQuickie (ObservableCollection<Quickies> quickies)
 		{
@@ -37,28 +37,37 @@ namespace PackListApp
 
 	    private async void Button_OnClicked(object sender, EventArgs e)
 	    {
-
-	        if (_titel.Length == 0)
+	        try
 	        {
-	            await DisplayAlert("Missing Title", "Please enter a title", "Ok");
-	        }
-	        else
-	        {
-	            var quickie = new Quickies();
-
-	            var list = new ObservableCollection<QuickieItem>()
+	            if (_titel.Length == 0)
 	            {
-	                new QuickieItem() {Item = "Hat"},
-	                new QuickieItem() {Item = "Gloves"}
-	            };
+	                await DisplayAlert("Missing Title", "Please enter a title", "Ok");
+	            }
+	            else
+	            {
+	                var quickie = new Quickies();
 
-	            quickie.Items = list;
-	            quickie.Title = _titel;
+	                var list = new ObservableCollection<QuickieItem>()
+	                {
+	                    new QuickieItem() {Item = "Hat"},
+	                    new QuickieItem() {Item = "Gloves"}
+	                };
 
-	            _quickies.Add(quickie);
+	                quickie.Items = list;
+	                quickie.Title = _titel;
 
-	            await Navigation.PopToRootAsync();
+	                _quickies.Add(quickie);
+
+	                await Navigation.PopToRootAsync();
+	            }
             }
+	        catch (Exception exception)
+	        {
+	            Console.WriteLine(exception);
+	            DisplayAlert("Error", "Something went wrong", "Ok");
+	        }
+
+
             
 	    }
 

@@ -27,13 +27,6 @@ namespace PackListApp
             PushToList();
 	    }
 
-	    private void SnowBtn_OnClicked(object sender, EventArgs e)
-	    {
-
-	        PushToList();
-        }
-
-
 
         private async void PushToList()
 	    {
