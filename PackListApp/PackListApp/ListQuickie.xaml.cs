@@ -64,7 +64,7 @@ namespace PackListApp
 	        catch (Exception exception)
 	        {
 	            Console.WriteLine(exception);
-	            DisplayAlert("Error", "Something went wrong", "Ok");
+	            await DisplayAlert("Error", "Something went wrong", "Ok");
 	        }
 
 
