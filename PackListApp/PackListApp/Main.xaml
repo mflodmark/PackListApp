@@ -2,18 +2,18 @@
 
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="PackListApp.UserPackList"
+             x:Class="PackListApp.Main"
              Title="Easypacking">
     <ContentPage.ToolbarItems>
         <ToolbarItem Icon="plus.png" Clicked="Add_OnClicked" Priority="0" Order="Primary"></ToolbarItem>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout>
-            <ListView x:Name="MyListView" 
-                      ItemSelected="MyListView_OnItemSelected"
-                      ItemTapped="MyListView_OnItemTapped"
+            <ListView x:Name="MainListView" 
+                      ItemSelected="MainListView_OnItemSelected"
+                      ItemTapped="MainListView_OnItemTapped"
                       IsPullToRefreshEnabled="True"
-                      Refreshing="MyListView_OnRefreshing"
+                      Refreshing="MainListView_OnRefreshing"
                       Style="{StaticResource ColorTheme}"
                       SeparatorColor="{StaticResource ListSeperatorColor}">
                 <ListView.ItemTemplate>

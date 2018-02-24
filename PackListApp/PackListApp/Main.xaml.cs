@@ -12,11 +12,11 @@ using Xamarin.Forms.Xaml;
 namespace PackListApp
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class UserPackList : ContentPage
+	public partial class Main : ContentPage
 	{
-	    private ObservableCollection<Quickies> _quickies;
+	    private readonly ObservableCollection<Quickies> _quickies;
 
-        public UserPackList ()
+        public Main ()
 		{
             //BindingContext = new UserPackListViewModel();
 
@@ -24,9 +24,9 @@ namespace PackListApp
 
 		    //BindingContext = GetQuickies();
 		    _quickies = GetQuickies();
-		    MyListView.ItemsSource = _quickies;
+		    MainListView.ItemsSource = _quickies;
 
-		    //MyListView.ItemsSource = new ObservableCollection<Quickies>();
+		    //MainListView.ItemsSource = new ObservableCollection<Quickies>();
 
 		}
 
@@ -44,18 +44,18 @@ namespace PackListApp
 	    }
 
 
-        private async void MyListView_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private async void MainListView_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
 	    {
 	        var q = e.SelectedItem as Quickies;
 
-            await Navigation.PushAsync(new ListQuickieItem(q));
+            await Navigation.PushAsync(new MainListItems(q));
 
-	        //MyListView.SelectedItem = null;
+	        //MainListView.SelectedItem = null;
         }
 
-        private void MyListView_OnRefreshing(object sender, EventArgs e)
+        private void MainListView_OnRefreshing(object sender, EventArgs e)
 	    {
-	        MyListView.EndRefresh();
+	        MainListView.EndRefresh();
         }
 
 	    private void Delete_OnClicked(object sender, EventArgs e)
@@ -66,10 +66,10 @@ namespace PackListApp
 
 	    private async void Add_OnClicked(object sender, EventArgs e)
 	    {
-            await Navigation.PushAsync(new Options(_quickies));
+            await Navigation.PushAsync(new NewList(_quickies));
         }
 
-	    private void MyListView_OnItemTapped(object sender, ItemTappedEventArgs e)
+	    private void MainListView_OnItemTapped(object sender, ItemTappedEventArgs e)
 	    {
 	        
 	    }

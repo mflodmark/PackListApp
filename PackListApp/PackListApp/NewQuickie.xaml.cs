@@ -11,11 +11,11 @@ using Xamarin.Forms.Xaml;
 namespace PackListApp
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class OptionQuickie : ContentPage
+	public partial class NewQuickie : ContentPage
 	{
 	    private readonly ObservableCollection<Quickies> _quickies;
 
-	    public OptionQuickie (ObservableCollection<Quickies> quickies)
+	    public NewQuickie (ObservableCollection<Quickies> quickies)
 		{
 			InitializeComponent ();
 

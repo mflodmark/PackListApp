@@ -21,7 +21,7 @@
                 </ListView.ItemTemplate>
             </ListView>
             <Button Text="Select" HorizontalOptions="FillAndExpand" Style="{StaticResource ButtonTheme}"
-                    BorderRadius="0" Clicked="Button_OnClicked"></Button>
+                    CornerRadius="0" Clicked="Button_OnClicked"></Button>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

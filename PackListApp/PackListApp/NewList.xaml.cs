@@ -11,11 +11,11 @@ using Xamarin.Forms.Xaml;
 namespace PackListApp
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class Options : ContentPage
+	public partial class NewList : ContentPage
 	{
-	    private ObservableCollection<Quickies> _quickies;
+	    private readonly ObservableCollection<Quickies> _quickies;
 
-	    public Options (ObservableCollection<Quickies> quickies)
+	    public NewList (ObservableCollection<Quickies> quickies)
 		{
 			InitializeComponent ();
 
@@ -24,7 +24,7 @@ namespace PackListApp
 
 		private async void QuickBtn_OnClicked(object sender, EventArgs e)
 		{
-			await Navigation.PushAsync(new OptionQuickie(_quickies));
+			await Navigation.PushAsync(new NewQuickie(_quickies));
 		}
 
 		private void MyOwnBtn_OnClicked(object sender, EventArgs e)

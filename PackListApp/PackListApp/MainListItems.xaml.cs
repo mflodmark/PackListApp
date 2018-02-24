@@ -11,11 +11,11 @@ using Xamarin.Forms.Xaml;
 namespace PackListApp
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class ListQuickieItem : ContentPage
+	public partial class MainListItems : ContentPage
 	{
-	    private Quickies _quickies;
+	    private readonly Quickies _quickies;
 
-		public ListQuickieItem (Quickies quickies)
+		public MainListItems (Quickies quickies)
 		{
 			InitializeComponent ();
 
@@ -23,7 +23,7 @@ namespace PackListApp
 
 		    BindingContext = _quickies;
 
-		    MyListView.ItemsSource = _quickies.Items;
+		    MainListItemsListView.ItemsSource = _quickies.Items;
 		}
 
 	    private void Delete_OnClicked(object sender, EventArgs e)
