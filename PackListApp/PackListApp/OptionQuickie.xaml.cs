@@ -27,13 +27,6 @@ namespace PackListApp
             PushToList();
 	    }
 
-	    private void SnowBtn_OnClicked(object sender, EventArgs e)
-	    {
-
-	        PushToList();
-        }
-
-
 
         private async void PushToList()
 	    {
@@ -41,7 +34,7 @@ namespace PackListApp
 	        {
 	            await Navigation.PushAsync(new ListQuickie(_quickies));
             }
-            catch (Exception e)
+            catch (Exception)
 	        {
 	            await DisplayAlert("Error", "Can't access page", "Ok");
 	        }

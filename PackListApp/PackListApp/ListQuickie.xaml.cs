@@ -14,7 +14,7 @@ namespace PackListApp
 	public partial class ListQuickie : ContentPage
 	{
 	    private readonly ObservableCollection<Quickies> _quickies;
-	    private string _titel;
+	    private string _titel = "";
 
 	    public ListQuickie (ObservableCollection<Quickies> quickies)
 		{
