@@ -31,9 +31,31 @@ namespace PackListApp
 
         }
 
-        private async void Add_OnClicked(object sender, EventArgs e)
+        private void Add_OnClicked(object sender, EventArgs e)
         {
-            await Navigation.PushModalAsync(new MainNewListItem(_selectedList));
+
+            ToEntryPage();
         }
+
+        private async void ToEntryPage(ListItem listItem = null)
+        {
+            await Navigation.PushModalAsync(new MainNewListItem(_selectedList, listItem));
+
+        }
+
+        private void MainListItemsListView_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
+        {
+            if (e.SelectedItem == null)
+            {
+                return; //ItemSelected is called on deselection, which results in SelectedItem being set to null
+            }
+
+            var q = e.SelectedItem as ListItem;
+
+            ToEntryPage(q);
+
+            ((ListView)sender).SelectedItem = null;
+        }
+
     }
 }

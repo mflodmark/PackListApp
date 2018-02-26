@@ -40,12 +40,21 @@ namespace PackListApp
 
         private async void MainListView_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
 	    {
-	        var q = e.SelectedItem as List;
+            if (e.SelectedItem == null)
+            {
+                return; //ItemSelected is called on deselection, which results in SelectedItem being set to null
+            }
+
+            var q = e.SelectedItem as List;
 
 	        await Navigation.PushAsync(new MainListItems(q));
+
+            ((ListView)sender).SelectedItem = null; 
         }
 
-	    private void MainListView_OnRefreshing(object sender, EventArgs e)
+
+
+        private void MainListView_OnRefreshing(object sender, EventArgs e)
 	    {
 	        MainListView.EndRefresh();
         }

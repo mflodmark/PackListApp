@@ -10,7 +10,8 @@
         <StackLayout>
             <ListView x:Name="MainListItemsListView" 
                       Style="{StaticResource ColorTheme}"
-                      SeparatorColor="{StaticResource ListSeperatorColor}">
+                      SeparatorColor="{StaticResource ListSeperatorColor}"
+                      ItemSelected="MainListItemsListView_OnItemSelected">
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
