@@ -14,7 +14,7 @@ namespace PackListApp
 	{
 	    private ListItem _item;
 	    private readonly List _selectedList;
-	    private bool _editItem;
+	    private readonly bool _editItem;
 
 	    public MainNewListItem (List selectedList, ListItem listItem = null)
 		{
@@ -23,10 +23,7 @@ namespace PackListApp
 		    _selectedList = selectedList;
 
 		    _item = listItem ?? new ListItem() {Item = ""};
-		    if (listItem == null)
-		    {
-		        _editItem = true;
-		    }
+		    _editItem = listItem != null;
 
             BindingContext = _item;
 		}
