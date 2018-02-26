@@ -42,6 +42,13 @@
                 <Setter Property="FontSize" Value="20"></Setter>
                 <Setter Property="FontAttributes" Value="Bold"></Setter>
             </Style>
+            <Style x:Key="CancelButtonTheme" TargetType="Button">
+                <Setter Property="BorderRadius" Value="10"></Setter>
+                <Setter Property="BackgroundColor" Value="#808e9b"></Setter>
+                <Setter Property="TextColor" Value="{StaticResource OptionTextColor}"></Setter>
+                <Setter Property="FontSize" Value="20"></Setter>
+                <Setter Property="FontAttributes" Value="Bold"></Setter>
+            </Style>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

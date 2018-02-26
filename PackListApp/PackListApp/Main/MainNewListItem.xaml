@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PackListApp.MainNewListItem"
+             Padding="0,20,0,0"
+             Title="New item">
+    <ContentPage.Content>
+        <StackLayout  Style="{StaticResource ColorTheme}">
+            <Button Text="Cancel" HorizontalOptions="FillAndExpand" Style="{StaticResource CancelButtonTheme}"
+                    BorderRadius="0"></Button>
+            <StackLayout  VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand">
+                <Label Text="Enter new list item name" TextColor="{StaticResource OptionTextColor}"/>
+                <Entry Placeholder="Name..." TextChanged="Entry_TextChanged"></Entry>
+            </StackLayout>
+            <Button Text="Done" HorizontalOptions="FillAndExpand" Style="{StaticResource ButtonTheme}"
+                    BorderRadius="0" Clicked="Done_Clicked"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

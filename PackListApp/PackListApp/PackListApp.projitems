@@ -19,7 +19,16 @@
       <DependentUpon>ListQuickie.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Models\Quickies.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Main\MainListItems.xaml.cs">
+      <DependentUpon>MainListItems.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ListItem.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\List.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Main\MainNewListItem.xaml.cs">
+      <DependentUpon>MainNewListItem.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)NewQuickie.xaml.cs">
       <DependentUpon>NewQuickie.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -28,13 +37,13 @@
       <DependentUpon>NewList.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Main.xaml.cs">
+    <Compile Include="$(MSBuildThisFileDirectory)Main\Main.xaml.cs">
       <DependentUpon>Main.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Main.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Main\Main.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -56,5 +65,20 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Main\MainListItems.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Main\MainNewListItem.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)Main\" />
   </ItemGroup>
 </Project>

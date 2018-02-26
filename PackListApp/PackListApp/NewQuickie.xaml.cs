@@ -13,7 +13,7 @@ namespace PackListApp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class NewQuickie : ContentPage
     {
-        public NewQuickie(ObservableCollection<Quickies> quickie)
+        public NewQuickie(ObservableCollection<List> quickie)
         {
             InitializeComponent();
         }
