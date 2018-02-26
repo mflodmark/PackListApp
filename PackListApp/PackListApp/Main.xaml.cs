@@ -15,13 +15,13 @@ namespace PackListApp
 	{
 	    private readonly ObservableCollection<Quickies> _quickies;
 
-        public Main ()
-		{
-			InitializeComponent ();
-		}
+        public Main()
+        {
+            InitializeComponent();
+        }
 
 
-	    private void MyListView_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
+        private void MyListView_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
 	    {
 	        
 	    }
