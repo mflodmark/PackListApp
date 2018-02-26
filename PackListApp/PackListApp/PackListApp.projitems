@@ -20,21 +20,21 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Models\Quickies.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)OptionQuickie.xaml.cs">
-      <DependentUpon>OptionQuickie.xaml</DependentUpon>
+    <Compile Include="$(MSBuildThisFileDirectory)NewQuickie.xaml.cs">
+      <DependentUpon>NewQuickie.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Options.xaml.cs">
       <DependentUpon>Options.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)UserPackList.xaml.cs">
-      <DependentUpon>UserPackList.xaml</DependentUpon>
+    <Compile Include="$(MSBuildThisFileDirectory)Main.xaml.cs">
+      <DependentUpon>Main.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)UserPackList.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Main.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -46,7 +46,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)OptionQuickie.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)NewQuickie.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
