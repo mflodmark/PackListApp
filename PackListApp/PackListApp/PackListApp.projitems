@@ -19,53 +19,40 @@
       <DependentUpon>ListQuickie.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)MainListItems.xaml.cs">
-      <DependentUpon>MainListItems.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Models\QuickieItem.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Quickies.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)NewQuickie.xaml.cs">
-      <DependentUpon>NewQuickie.xaml</DependentUpon>
+    <Compile Include="$(MSBuildThisFileDirectory)OptionQuickie.xaml.cs">
+      <DependentUpon>OptionQuickie.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)NewList.xaml.cs">
-      <DependentUpon>NewList.xaml</DependentUpon>
+    <Compile Include="$(MSBuildThisFileDirectory)Options.xaml.cs">
+      <DependentUpon>Options.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Main.xaml.cs">
-      <DependentUpon>Main.xaml</DependentUpon>
+    <Compile Include="$(MSBuildThisFileDirectory)UserPackList.xaml.cs">
+      <DependentUpon>UserPackList.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\BaseViewModel.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\UserPackListViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Main.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)UserPackList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)NewList.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Options.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)NewQuickie.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)OptionQuickie.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)ListQuickie.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)MainListItems.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

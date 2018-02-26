@@ -1,62 +1,32 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using PackListApp.Models;
-using PackListApp.ViewModels;
+
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace PackListApp
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class Main : ContentPage
+	public partial class UserPackList : ContentPage
 	{
-	    private readonly ObservableCollection<Quickies> _quickies;
-
-        public Main ()
+		public UserPackList ()
 		{
-            //BindingContext = new UserPackListViewModel();
-
-            InitializeComponent();
-
-		    //BindingContext = GetQuickies();
-		    _quickies = GetQuickies();
-		    MainListView.ItemsSource = _quickies;
-
-		    //MainListView.ItemsSource = new ObservableCollection<Quickies>();
-
+			InitializeComponent ();
 		}
 
-	    public ObservableCollection<Quickies> GetQuickies()
+
+	    private void MyListView_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
 	    {
-	        var quickies = new ObservableCollection<Quickies>();
-
-	        var itemList1 = new ObservableCollection<QuickieItem>() { new QuickieItem() { Item = "Handskar" } };
-	        var itemList2 = new ObservableCollection<QuickieItem> { new QuickieItem() { Item = "Skor" } };
-
-	        quickies.Add(new Quickies() { Title = "Sol", Items = itemList1 });
-	        quickies.Add(new Quickies() { Title = "Vinter", Items = itemList2 });
-
-	        return quickies;
+	        
 	    }
 
-
-        private async void MainListView_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
+	    private void MyListView_OnRefreshing(object sender, EventArgs e)
 	    {
-	        var q = e.SelectedItem as Quickies;
-
-            await Navigation.PushAsync(new MainListItems(q));
-
-	        //MainListView.SelectedItem = null;
-        }
-
-        private void MainListView_OnRefreshing(object sender, EventArgs e)
-	    {
-	        MainListView.EndRefresh();
-        }
+	        
+	    }
 
 	    private void Delete_OnClicked(object sender, EventArgs e)
 	    {
@@ -66,12 +36,7 @@ namespace PackListApp
 
 	    private async void Add_OnClicked(object sender, EventArgs e)
 	    {
-            await Navigation.PushAsync(new NewList(_quickies));
+            await Navigation.PushAsync(new Options());
         }
-
-	    private void MainListView_OnItemTapped(object sender, ItemTappedEventArgs e)
-	    {
-	        
-	    }
 	}
 }
