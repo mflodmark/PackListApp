@@ -24,8 +24,8 @@
       <DependentUpon>NewQuickie.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="$(MSBuildThisFileDirectory)Options.xaml.cs">
-      <DependentUpon>Options.xaml</DependentUpon>
+    <Compile Include="$(MSBuildThisFileDirectory)NewList.xaml.cs">
+      <DependentUpon>NewList.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Main.xaml.cs">
@@ -40,7 +40,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Options.xaml">
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)NewList.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

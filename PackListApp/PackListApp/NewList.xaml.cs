@@ -13,13 +13,13 @@ namespace PackListApp
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class NewList : ContentPage
 	{
-	    private readonly ObservableCollection<Quickies> _quickies;
+        private readonly ObservableCollection<Quickies> _quickies;
 
-	    public NewList (ObservableCollection<Quickies> quickies)
+        public NewList (ObservableCollection<Quickies> quickies)
 		{
 			InitializeComponent ();
 
-		    _quickies = quickies;
+		    //_quickies = quickies;
 		}
 
 		private async void QuickBtn_OnClicked(object sender, EventArgs e)

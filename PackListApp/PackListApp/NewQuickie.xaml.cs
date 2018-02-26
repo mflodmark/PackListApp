@@ -1,18 +1,19 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using PackListApp.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
 namespace PackListApp
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class OptionQuickie : ContentPage
+    public partial class NewQuickie : ContentPage
     {
-        public OptionQuickie()
+        public NewQuickie(ObservableCollection<Quickies> quickie)
         {
             InitializeComponent();
         }
