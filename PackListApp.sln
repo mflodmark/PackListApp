@@ -1,13 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.27130.2027
+VisualStudioVersion = 15.0.27130.2036
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PackListApp.Android", "PackListApp\PackListApp.Android\PackListApp.Android.csproj", "{AAA60C44-D3B0-4D29-8D5C-29A020D49B04}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PackListApp.iOS", "PackListApp\PackListApp.iOS\PackListApp.iOS.csproj", "{4E602AA8-32E6-4330-BFE0-2E2F4AC01E73}"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "PackListApp", "PackListApp\PackListApp\PackListApp.shproj", "{26D5320F-23E7-486E-B7A4-FED3C9DFA587}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "VIewModels", "VIewModels", "{8EB8ED37-A2AB-418C-BB97-E15F12343450}"
+	ProjectSection(SolutionItems) = preProject
+		PackListApp\PackListApp\Models\BaseViewModel.cs = PackListApp\PackListApp\Models\BaseViewModel.cs
+		PackListApp\PackListApp\Models\ListItemViewModel.cs = PackListApp\PackListApp\Models\ListItemViewModel.cs
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution

@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
+using PackListApp.ViewModels;
 
 namespace PackListApp.Models
 {
@@ -10,7 +11,7 @@ namespace PackListApp.Models
     {
         public string Title { get; set; }
 
-        public ObservableCollection<ListItem> Items { get; set; }
+        public ObservableCollection<ListItemViewModel> Items { get; set; }
 
     }
 }

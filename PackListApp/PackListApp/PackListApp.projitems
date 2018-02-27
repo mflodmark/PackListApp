@@ -23,12 +23,14 @@
       <DependentUpon>MainListItems.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Models\BaseViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\ListItem.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\List.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Main\MainNewListItem.xaml.cs">
       <DependentUpon>MainNewListItem.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Models\ListItemViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)NewQuickie.xaml.cs">
       <DependentUpon>NewQuickie.xaml</DependentUpon>
       <SubType>Code</SubType>

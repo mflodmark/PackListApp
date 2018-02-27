@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PackListApp.Models;
+using PackListApp.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -12,17 +13,17 @@ namespace PackListApp
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class MainNewListItem : ContentPage
 	{
-	    private ListItem _item;
+	    private ListItemViewModel _item;
 	    private readonly List _selectedList;
 	    private readonly bool _editItem;
 
-	    public MainNewListItem (List selectedList, ListItem listItem = null)
+	    public MainNewListItem (List selectedList, ListItemViewModel listItem = null)
 		{
 			InitializeComponent ();
 
 		    _selectedList = selectedList;
 
-		    _item = listItem ?? new ListItem() {Item = ""};
+		    _item = listItem ?? new ListItemViewModel() {Item = ""};
 		    _editItem = listItem != null;
 
             BindingContext = _item;
@@ -30,7 +31,7 @@ namespace PackListApp
 
         private void Entry_TextChanged(object sender, TextChangedEventArgs e)
         {
-            _item = new ListItem() {Item = e.NewTextValue}; 
+            _item = new ListItemViewModel() {Item = e.NewTextValue}; 
         }
 
         private async void Done_Clicked(object sender, EventArgs e)

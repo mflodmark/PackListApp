@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PackListApp.Models;
+using PackListApp.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -37,7 +38,7 @@ namespace PackListApp
             ToEntryPage();
         }
 
-        private async void ToEntryPage(ListItem listItem = null)
+        private async void ToEntryPage(ListItemViewModel listItem = null)
         {
             await Navigation.PushModalAsync(new MainNewListItem(_selectedList, listItem));
 
@@ -50,7 +51,7 @@ namespace PackListApp
                 return; //ItemSelected is called on deselection, which results in SelectedItem being set to null
             }
 
-            var q = e.SelectedItem as ListItem;
+            var q = e.SelectedItem as ListItemViewModel;
 
             ToEntryPage(q);
 

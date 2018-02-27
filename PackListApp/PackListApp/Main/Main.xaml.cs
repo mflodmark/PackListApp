@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PackListApp.Models;
+using PackListApp.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -28,8 +29,8 @@ namespace PackListApp
 	    {
 	        var quickies = new ObservableCollection<List>();
 
-	        var itemList1 = new ObservableCollection<ListItem>() { new ListItem() { Item = "Handskar" } };
-	        var itemList2 = new ObservableCollection<ListItem> { new ListItem() { Item = "Skor" } };
+	        var itemList1 = new ObservableCollection<ListItemViewModel>() { new ListItemViewModel() { Item = "Handskar" } };
+	        var itemList2 = new ObservableCollection<ListItemViewModel> { new ListItemViewModel() { Item = "Skor" } };
 
 	        quickies.Add(new List() { Title = "Sol", Items = itemList1 });
 	        quickies.Add(new List() { Title = "Vinter", Items = itemList2 });
