@@ -13,28 +13,37 @@ namespace PackListApp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class NewQuickie : ContentPage
     {
-        public NewQuickie(ObservableCollection<List> quickie)
+        private readonly ObservableCollection<List> _quickies;
+
+        public NewQuickie(ObservableCollection<List> quickies)
         {
             InitializeComponent();
+
+            _quickies = quickies;
         }
 
         private void SunBtn_OnClicked(object sender, EventArgs e)
         {
-
             PushToList();
         }
-
-        private void SnowBtn_OnClicked(object sender, EventArgs e)
-        {
-
-            PushToList();
-        }
-
 
 
         private async void PushToList()
         {
-            await Navigation.PushAsync(new ListQuickie());
+            try
+            {
+                await Navigation.PushAsync(new ListQuickie());
+            }
+            catch (Exception)
+            {
+                await DisplayAlert("Error", "Can't access page", "Ok");
+            }
         }
+
+        private void Snow_OnTapped(object sender, EventArgs e)
+        {
+            PushToList();
+        }
+
     }
 }

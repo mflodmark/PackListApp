@@ -9,12 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PackListApp.iOS", "PackList
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "PackListApp", "PackListApp\PackListApp\PackListApp.shproj", "{26D5320F-23E7-486E-B7A4-FED3C9DFA587}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "VIewModels", "VIewModels", "{8EB8ED37-A2AB-418C-BB97-E15F12343450}"
-	ProjectSection(SolutionItems) = preProject
-		PackListApp\PackListApp\Models\BaseViewModel.cs = PackListApp\PackListApp\Models\BaseViewModel.cs
-		PackListApp\PackListApp\Models\ListItemViewModel.cs = PackListApp\PackListApp\Models\ListItemViewModel.cs
-	EndProjectSection
-EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		PackListApp\PackListApp\PackListApp.projitems*{26d5320f-23e7-486e-b7a4-fed3c9dfa587}*SharedItemsImports = 13

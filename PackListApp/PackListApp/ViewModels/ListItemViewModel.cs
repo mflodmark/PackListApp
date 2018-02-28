@@ -6,8 +6,6 @@ namespace PackListApp.ViewModels
     {
         //public string Item { get; set; }
 
-        // Default constructor for scenarios where we want to instantiate a 
-        // blank ContactViewModel object. 
         public ListItemViewModel() { }
 
         public ListItemViewModel(ListItem listItem)
