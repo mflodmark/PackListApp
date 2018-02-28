@@ -36,7 +36,7 @@ namespace PackListApp
 
         private async void Done_Clicked(object sender, EventArgs e)
         {
-            if (_item.Item.Length == 0)
+            if (_item.Item.Replace(" ", "").Length == 0)
             {
                 await DisplayAlert("Missing value", "Enter name", "Ok");
             }

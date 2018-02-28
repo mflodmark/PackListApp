@@ -25,7 +25,7 @@
                             </StackLayout>
                             <ViewCell.ContextActions>
                                 <MenuItem Text="Delete" Clicked="Delete_OnClicked" 
-                                          IsDestructive="True"></MenuItem>
+                                          IsDestructive="True" CommandParameter="{Binding .}"></MenuItem>
                             </ViewCell.ContextActions>
                         </ViewCell>
                     </DataTemplate>

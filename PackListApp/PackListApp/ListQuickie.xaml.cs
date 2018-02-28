@@ -40,7 +40,7 @@ namespace PackListApp
         {
             try
             {
-                if (_titel.Length == 0)
+                if (_titel.Replace(" ", "").Length == 0)
                 {
                     await DisplayAlert("Missing Title", "Please enter a title", "Ok");
                 }

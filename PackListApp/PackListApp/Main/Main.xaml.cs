@@ -60,10 +60,15 @@ namespace PackListApp
 	        MainListView.EndRefresh();
         }
 
-	    private void Delete_OnClicked(object sender, EventArgs e)
+	    private async void Delete_OnClicked(object sender, EventArgs e)
 	    {
-	        
-	    }
+	        var response = await DisplayAlert("Warning", "Are you sure?", "Yes", "No");
+	        if (response)
+	        {
+	            var selected = (sender as MenuItem).CommandParameter as EasyList;
+	            _quickies.Remove(selected);
+	        }
+        }
 
 
 	    private async void Add_OnClicked(object sender, EventArgs e)
