@@ -8,7 +8,7 @@ namespace PackListApp.ViewModels
 
         public ListItemViewModel() { }
 
-        public ListItemViewModel(ListItem listItem)
+        public ListItemViewModel(EasyListItem easyListItem)
         {
             // When initializing this object, I'm using the private field directly
             // because I don't want this to raise a notification. 
@@ -29,7 +29,7 @@ namespace PackListApp.ViewModels
             // you, you can use a convention-based mapping library like AutoMapper.
 
 
-            Item = listItem.Item;
+            Item = easyListItem.Item;
         }
 
         private string _item;

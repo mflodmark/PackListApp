@@ -13,9 +13,9 @@ namespace PackListApp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class NewQuickie : ContentPage
     {
-        private readonly ObservableCollection<List> _quickies;
+        private readonly ObservableCollection<EasyList> _quickies;
 
-        public NewQuickie(ObservableCollection<List> quickies)
+        public NewQuickie(ObservableCollection<EasyList> quickies)
         {
             InitializeComponent();
 
@@ -32,7 +32,7 @@ namespace PackListApp
         {
             try
             {
-                await Navigation.PushAsync(new ListQuickie());
+                await Navigation.PushAsync(new ListQuickie(_quickies));
             }
             catch (Exception)
             {

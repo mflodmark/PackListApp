@@ -14,9 +14,9 @@ namespace PackListApp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainListItems : ContentPage
     {
-        private readonly List _selectedList;
+        private readonly EasyList _selectedList;
 
-        public MainListItems(List selectedList)
+        public MainListItems(EasyList selectedList)
         {
             InitializeComponent();
 

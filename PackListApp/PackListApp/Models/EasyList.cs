@@ -7,7 +7,7 @@ using PackListApp.ViewModels;
 
 namespace PackListApp.Models
 {
-    public class List
+    public class EasyList
     {
         public string Title { get; set; }
 

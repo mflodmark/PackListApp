@@ -1,6 +1,6 @@
 ﻿namespace PackListApp.Models
 {
-    public class ListItem
+    public class EasyListItem
     {
         public string Item { get; set; }
     }

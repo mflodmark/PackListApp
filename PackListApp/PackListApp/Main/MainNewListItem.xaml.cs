@@ -14,10 +14,10 @@ namespace PackListApp
 	public partial class MainNewListItem : ContentPage
 	{
 	    private ListItemViewModel _item;
-	    private readonly List _selectedList;
+	    private readonly EasyList _selectedList;
 	    private readonly bool _editItem;
 
-	    public MainNewListItem (List selectedList, ListItemViewModel listItem = null)
+	    public MainNewListItem (EasyList selectedList, ListItemViewModel listItem = null)
 		{
 			InitializeComponent ();
 

@@ -14,7 +14,7 @@ namespace PackListApp
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Main : ContentPage
 	{
-	    private readonly ObservableCollection<List> _quickies;
+	    private readonly ObservableCollection<EasyList> _quickies;
 
         public Main()
         {
@@ -25,15 +25,15 @@ namespace PackListApp
             //BindingContext = _quickies;
         }
 
-	    public ObservableCollection<List> GetQuickies()
+	    public ObservableCollection<EasyList> GetQuickies()
 	    {
-	        var quickies = new ObservableCollection<List>();
+	        var quickies = new ObservableCollection<EasyList>();
 
 	        var itemList1 = new ObservableCollection<ListItemViewModel>() { new ListItemViewModel() { Item = "Handskar" } };
 	        var itemList2 = new ObservableCollection<ListItemViewModel> { new ListItemViewModel() { Item = "Skor" } };
 
-	        quickies.Add(new List() { Title = "Sol", Items = itemList1 });
-	        quickies.Add(new List() { Title = "Vinter", Items = itemList2 });
+	        quickies.Add(new EasyList() { Title = "Sol", Items = itemList1 });
+	        quickies.Add(new EasyList() { Title = "Vinter", Items = itemList2 });
 
 	        return quickies;
 	    }
@@ -46,7 +46,7 @@ namespace PackListApp
                 return; //ItemSelected is called on deselection, which results in SelectedItem being set to null
             }
 
-            var q = e.SelectedItem as List;
+            var q = e.SelectedItem as EasyList;
 
 	        await Navigation.PushAsync(new MainListItems(q));
 
