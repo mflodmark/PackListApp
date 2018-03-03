@@ -155,7 +155,13 @@
     <BundleResource Include="Resources\icons8-checkmark-26.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\icons8-happy-50.png" />
+    <BundleResource Include="Resources\icons8-happy-filled-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icons8-standing-man-filled-50.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\icons8-women-filled-50.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\PackListApp\PackListApp.projitems" Label="Shared" />
