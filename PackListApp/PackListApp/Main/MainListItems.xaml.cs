@@ -24,7 +24,13 @@ namespace PackListApp
 
             BindingContext = _selectedList;
 
+            UpdateTitle();
             MainListItemsListView.ItemsSource = _selectedList.Items;
+        }
+
+        private void UpdateTitle()
+        {
+            TitleLabel.Text = $"{_selectedList.GetPackedItems()} / {_selectedList.GetTotalItems()}";
         }
 
         private async void Delete_OnClicked(object sender, EventArgs e)
@@ -35,11 +41,11 @@ namespace PackListApp
             var selected = (sender as MenuItem)?.CommandParameter as ListItemViewModel;
             _selectedList.Items.Remove(selected);
 
+            UpdateTitle();
         }
 
         private void Add_OnClicked(object sender, EventArgs e)
         {
-
             ToEntryPage();
         }
 
@@ -62,6 +68,8 @@ namespace PackListApp
             }
             
             ((ListView)sender).SelectedItem = null;
+
+            UpdateTitle();
         }
 
         private void Edit_OnClicked(object sender, EventArgs e)

@@ -6,6 +6,7 @@
         <ResourceDictionary>
             <Color x:Key="OptionTextColor">White</Color>
             <Color x:Key="ListSeperatorColor">#82ccdd</Color>
+            <Color x:Key="TitleColor">#ffa801</Color>
 
             <Style x:Key="ColorSun" TargetType="Button">
                 <Setter Property="BackgroundColor" Value="#ffa801"></Setter>

@@ -7,7 +7,11 @@
         <ToolbarItem Icon="plus.png" Clicked="Add_OnClicked" Priority="0" Order="Primary"></ToolbarItem>
     </ContentPage.ToolbarItems>
     <ContentPage.Content>
-        <StackLayout>
+        <StackLayout Spacing="0">
+            <StackLayout Orientation="Horizontal" Padding="13, 5"   
+                         BackgroundColor="{StaticResource TitleColor}">
+                <Label x:Name="TitleLabel" Style="{StaticResource LabelListView}" HorizontalOptions="CenterAndExpand"></Label>
+            </StackLayout>
             <ListView x:Name="MainListItemsListView" 
                       Style="{StaticResource ColorTheme}"
                       SeparatorColor="{StaticResource ListSeperatorColor}"
