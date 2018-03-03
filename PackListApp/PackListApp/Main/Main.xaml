@@ -21,7 +21,8 @@
                             <StackLayout Orientation="Horizontal" Padding="5" 
                                          VerticalOptions="Center">
                                 <Image></Image>
-                                <Label Text="{Binding Title}" Style="{StaticResource LabelListView}"></Label>
+                                <Label Text="{Binding Title}" Style="{StaticResource LabelListView}" HorizontalOptions="StartAndExpand"></Label>
+                                <Label Text="{Binding QuantityText}"  Style="{StaticResource LabelListView}" HorizontalOptions="End"></Label>
                             </StackLayout>
                             <ViewCell.ContextActions>
                                 <MenuItem Text="Delete" Clicked="Delete_OnClicked" 

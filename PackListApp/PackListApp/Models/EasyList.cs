@@ -15,6 +15,8 @@ namespace PackListApp.Models
 
         public bool EasyPacked { get; set; }
 
+        public string QuantityText => $"{GetPackedItems()} / {GetTotalItems()}";
+
         public int GetPackedItems()
         {
             var packedItems = Items.Where(p => p.Packed).ToList().Count;

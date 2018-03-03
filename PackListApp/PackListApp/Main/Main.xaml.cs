@@ -14,18 +14,19 @@ namespace PackListApp
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Main : ContentPage
 	{
-	    private readonly ObservableCollection<EasyList> _quickies;
+	    private readonly ObservableCollection<EasyList> _easyLists;
 
         public Main()
         {
             InitializeComponent();
 
-            _quickies = GetQuickies();
-            MainListView.ItemsSource = _quickies;
-            //BindingContext = _quickies;
+            _easyLists = GetQuickies();
+            MainListView.ItemsSource = _easyLists;
+            //BindingContext = _easyLists;
         }
 
-	    public ObservableCollection<EasyList> GetQuickies()
+
+        public ObservableCollection<EasyList> GetQuickies()
 	    {
 	        var quickies = new ObservableCollection<EasyList>();
 
@@ -66,13 +67,13 @@ namespace PackListApp
 	        if (!response) return;
 
 	        var selected = (sender as MenuItem)?.CommandParameter as EasyList;
-	        _quickies.Remove(selected);
+	        _easyLists.Remove(selected);
 	    }
 
 
 	    private async void Add_OnClicked(object sender, EventArgs e)
 	    {
-            await Navigation.PushAsync(new NewList(_quickies));
+            await Navigation.PushAsync(new NewList(_easyLists));
         }
 	}
 }
