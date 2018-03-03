@@ -38,6 +38,14 @@
             </Style>
             <Style x:Key="ButtonTheme" TargetType="Button">
                 <Setter Property="BorderRadius" Value="10"></Setter>
+                <Setter Property="BackgroundColor" Value="#82ccdd"></Setter>
+                <Setter Property="TextColor" Value="{StaticResource OptionTextColor}"></Setter>
+                <Setter Property="FontSize" Value="20"></Setter>
+                <Setter Property="FontAttributes" Value="Bold"></Setter>
+            </Style>
+            <Style x:Key="Done
+                   " TargetType="Button">
+                <Setter Property="BorderRadius" Value="10"></Setter>
                 <Setter Property="BackgroundColor" Value="#05c46b"></Setter>
                 <Setter Property="TextColor" Value="{StaticResource OptionTextColor}"></Setter>
                 <Setter Property="FontSize" Value="20"></Setter>

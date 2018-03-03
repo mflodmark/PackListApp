@@ -58,8 +58,9 @@ namespace PackListApp
 
         private void MainListView_OnRefreshing(object sender, EventArgs e)
 	    {
+	        MainListView.ItemsSource = _easyLists;
 
-	        MainListView.EndRefresh();
+            MainListView.EndRefresh();
         }
 
 	    private async void Delete_OnClicked(object sender, EventArgs e)

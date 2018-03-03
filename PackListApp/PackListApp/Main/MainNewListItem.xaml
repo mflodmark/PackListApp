@@ -19,7 +19,7 @@
                              ></Stepper>
                 </StackLayout>
             </StackLayout>
-            <Button Text="Done" HorizontalOptions="FillAndExpand" Style="{StaticResource ButtonTheme}"
+            <Button Text="Done" HorizontalOptions="FillAndExpand" Style="{StaticResource DoneButtonTheme}"
                     CornerRadius="0" Clicked="Done_Clicked"></Button>
         </StackLayout>
     </ContentPage.Content>
