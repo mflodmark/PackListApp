@@ -27,7 +27,7 @@ namespace PackListApp.ViewModels
         public bool EasyPacked
         {
             get => _easyPacked;
-            set => SetValue(ref _easyPacked, GetPackedItems() == GetTotalItems());
+            set => SetValue(ref _easyPacked, value);
         }
         
         private string _quantityText;

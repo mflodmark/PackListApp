@@ -32,8 +32,9 @@ namespace PackListApp
         {
             TitleLabel.Text = $"{_selectedList.GetPackedItems()} / {_selectedList.GetTotalItems()}";
             _selectedList.QuantityText = $"{_selectedList.GetPackedItems()} / {_selectedList.GetTotalItems()}";
+            _selectedList.EasyPacked = _selectedList.GetPackedItems() == _selectedList.GetTotalItems();
         }
-
+        
         private async void Delete_OnClicked(object sender, EventArgs e)
         {
             var response = await DisplayAlert("Warning", "Are you sure?", "Yes", "No");
