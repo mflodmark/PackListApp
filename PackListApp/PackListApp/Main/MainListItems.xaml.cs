@@ -51,17 +51,23 @@ namespace PackListApp
 
         private void MainListItemsListView_OnItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
-            if (e.SelectedItem == null)
+            //ItemSelected is called on deselection, which results in SelectedItem being set to null
+            switch (e.SelectedItem)
             {
-                return; //ItemSelected is called on deselection, which results in SelectedItem being set to null
+                case null:
+                    return;
+                case ListItemViewModel selected:
+                    selected.Packed = !selected.Packed;
+                    break;
             }
-
-            var q = e.SelectedItem as ListItemViewModel;
-
-            ToEntryPage(q);
-
+            
             ((ListView)sender).SelectedItem = null;
         }
 
+        private void Edit_OnClicked(object sender, EventArgs e)
+        {
+            var selected = (sender as MenuItem)?.CommandParameter as ListItemViewModel;
+            ToEntryPage(selected);
+        }
     }
 }

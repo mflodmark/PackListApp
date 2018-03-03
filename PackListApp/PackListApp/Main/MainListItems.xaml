@@ -15,13 +15,20 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <ViewCell>
-                            <StackLayout Orientation="Horizontal" Padding="5" 
+                            <StackLayout Orientation="Horizontal" Padding="13, 0" 
                                          VerticalOptions="Center">
-                                <Label Text="{Binding Item}" Style="{StaticResource LabelListView}"></Label>
+                                <Label Text="{Binding Item}" HorizontalOptions="StartAndExpand"
+                                       Style="{StaticResource LabelListView}"></Label>
+                                <Label Text="{Binding Quantity}"
+                                       Style="{StaticResource LabelListView}"></Label>
+                                <Image HorizontalOptions="End" Source="icons8-checkmark-26" 
+                                       IsVisible="{Binding Packed}"></Image>
                             </StackLayout>
                             <ViewCell.ContextActions>
+                                <MenuItem Text="Edit" Clicked="Edit_OnClicked" 
+                                          CommandParameter="{Binding .}"></MenuItem>
                                 <MenuItem Text="Delete" Clicked="Delete_OnClicked" 
-                                          IsDestructive="True"></MenuItem>
+                                          IsDestructive="True" CommandParameter="{Binding .}"></MenuItem>
                             </ViewCell.ContextActions>
                         </ViewCell>
                     </DataTemplate>

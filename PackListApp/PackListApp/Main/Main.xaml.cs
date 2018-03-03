@@ -29,11 +29,11 @@ namespace PackListApp
 	    {
 	        var quickies = new ObservableCollection<EasyList>();
 
-	        var itemList1 = new ObservableCollection<ListItemViewModel>() { new ListItemViewModel() { Item = "Handskar" } };
-	        var itemList2 = new ObservableCollection<ListItemViewModel> { new ListItemViewModel() { Item = "Skor" } };
+	        var itemList1 = new ObservableCollection<ListItemViewModel>() { new ListItemViewModel() { Item = "Handskar", Quantity = 2} };
+	        var itemList2 = new ObservableCollection<ListItemViewModel> { new ListItemViewModel() { Item = "Skor", Quantity = 1} };
 
 	        quickies.Add(new EasyList() { Title = "Sol", Items = itemList1 });
-	        quickies.Add(new EasyList() { Title = "Vinter", Items = itemList2 });
+	        quickies.Add(new EasyList() { Title = "Vinter", Items = itemList2});
 
 	        return quickies;
 	    }

@@ -30,6 +30,7 @@ namespace PackListApp.ViewModels
 
 
             Item = easyListItem.Item;
+            Packed = false;
         }
 
         private string _item;
@@ -40,6 +41,23 @@ namespace PackListApp.ViewModels
             set => SetValue(ref _item, value);
         }
 
- 
+        private bool _packed;
+
+        public bool Packed
+        {
+            get => _packed;
+            set => SetValue(ref _packed, value);
+        }
+
+
+        private int _quantity;
+
+        public int Quantity
+        {
+            get => _quantity;
+            set => SetValue(ref _quantity, value);
+        }
+
+
     }
 }

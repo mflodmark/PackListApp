@@ -13,5 +13,19 @@ namespace PackListApp.Models
 
         public ObservableCollection<ListItemViewModel> Items { get; set; }
 
+        public bool EasyPacked { get; set; }
+
+        public int GetPackedItems()
+        {
+            var packedItems = Items.Where(p => p.Packed).ToList().Count;
+
+            return packedItems;
+        }
+
+        public int GetTotalItems()
+        {
+            return Items.Count;
+        }
+
     }
 }
