@@ -22,7 +22,7 @@ namespace PackListApp
 
             _selectedList = selectedList;
 
-            //BindingContext = _selectedList;
+            BindingContext = _selectedList;
 
             MainListItemsListView.ItemsSource = _selectedList.Items;
         }
