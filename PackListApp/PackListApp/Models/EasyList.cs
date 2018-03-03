@@ -13,7 +13,7 @@ namespace PackListApp.Models
 
         public ObservableCollection<ListItemViewModel> Items { get; set; }
 
-        public bool EasyPacked { get; set; }
+        public bool EasyPacked => GetPackedItems() == GetTotalItems();
 
         public string QuantityText => $"{GetPackedItems()} / {GetTotalItems()}";
 

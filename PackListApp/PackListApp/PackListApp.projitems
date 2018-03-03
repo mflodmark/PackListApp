@@ -30,6 +30,7 @@
       <DependentUpon>MainNewListItem.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModels\EasyListViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\ListItemViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)NewQuickie.xaml.cs">
       <DependentUpon>NewQuickie.xaml</DependentUpon>
@@ -82,6 +83,5 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Main\" />
-    <Folder Include="$(MSBuildThisFileDirectory)ViewModels\" />
   </ItemGroup>
 </Project>

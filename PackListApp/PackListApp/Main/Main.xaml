@@ -23,6 +23,8 @@
                                 <Image></Image>
                                 <Label Text="{Binding Title}" Style="{StaticResource LabelListView}" HorizontalOptions="StartAndExpand"></Label>
                                 <Label Text="{Binding QuantityText}"  Style="{StaticResource LabelListView}" HorizontalOptions="End"></Label>
+                                <Image HorizontalOptions="End" Source="icons8-happy-50" 
+                                       IsVisible="{Binding EasyPacked}"></Image>
                             </StackLayout>
                             <ViewCell.ContextActions>
                                 <MenuItem Text="Delete" Clicked="Delete_OnClicked" 

@@ -58,6 +58,7 @@ namespace PackListApp
 
         private void MainListView_OnRefreshing(object sender, EventArgs e)
 	    {
+
 	        MainListView.EndRefresh();
         }
 
