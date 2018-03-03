@@ -14,7 +14,7 @@ namespace PackListApp
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Main : ContentPage
 	{
-	    private readonly ObservableCollection<EasyList> _easyLists;
+	    private readonly ObservableCollection<EasyListViewModel> _easyLists;
 
         public Main()
         {
@@ -26,17 +26,17 @@ namespace PackListApp
         }
 
 
-        public ObservableCollection<EasyList> GetQuickies()
+        public ObservableCollection<EasyListViewModel> GetQuickies()
 	    {
-	        var quickies = new ObservableCollection<EasyList>();
+	        var quickies = new ObservableCollection<EasyListViewModel>();
 
 	        var itemList1 = new ObservableCollection<ListItemViewModel>() { new ListItemViewModel() { Item = "Handskar", Quantity = 2} };
 	        var itemList2 = new ObservableCollection<ListItemViewModel> { new ListItemViewModel() { Item = "Skor", Quantity = 1} };
 
-	        quickies.Add(new EasyList() { Title = "Sol", Items = itemList1 });
-	        quickies.Add(new EasyList() { Title = "Vinter", Items = itemList2});
+	        quickies.Add(new EasyListViewModel(new EasyList() { Title = "Sol", Items = itemList1 }));
+            quickies.Add(new EasyListViewModel(new EasyList() { Title = "Vinter", Items = itemList2}));
 
-	        return quickies;
+            return quickies;
 	    }
 
 
@@ -47,7 +47,7 @@ namespace PackListApp
                 return; //ItemSelected is called on deselection, which results in SelectedItem being set to null
             }
 
-            var q = e.SelectedItem as EasyList;
+            var q = e.SelectedItem as EasyListViewModel;
 
 	        await Navigation.PushAsync(new MainListItems(q));
 
@@ -68,14 +68,14 @@ namespace PackListApp
 	        var response = await DisplayAlert("Warning", "Are you sure?", "Yes", "No");
 	        if (!response) return;
 
-	        var selected = (sender as MenuItem)?.CommandParameter as EasyList;
+	        var selected = (sender as MenuItem)?.CommandParameter as EasyListViewModel;
 	        _easyLists.Remove(selected);
 	    }
 
 
 	    private async void Add_OnClicked(object sender, EventArgs e)
 	    {
-            await Navigation.PushAsync(new NewList(_easyLists));
+            //await Navigation.PushAsync(new NewList(_easyLists));
         }
 	}
 }

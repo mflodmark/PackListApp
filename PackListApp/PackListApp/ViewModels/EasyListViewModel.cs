@@ -6,14 +6,11 @@ namespace PackListApp.ViewModels
 {
     public class EasyListViewModel: BaseViewModel
     {
-        private readonly EasyList _easyList;
-
         public EasyListViewModel(EasyList easyList)
         {
-            _easyList = easyList;
             Title = easyList.Title;
-            EasyPacked = easyList.EasyPacked;
             Items = easyList.Items;
+            EasyPacked = easyList.EasyPacked;
             QuantityText = easyList.QuantityText;
         }
 
@@ -38,7 +35,7 @@ namespace PackListApp.ViewModels
         public string QuantityText
         {
             get => _quantityText;
-            set => SetValue(ref _quantityText, $"{GetPackedItems()} / {GetTotalItems()}");
+            set => SetValue(ref _quantityText, value);
         }
 
         private ObservableCollection<ListItemViewModel> _items;

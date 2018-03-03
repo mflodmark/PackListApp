@@ -14,9 +14,9 @@ namespace PackListApp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainListItems : ContentPage
     {
-        private readonly EasyList _selectedList;
+        private readonly EasyListViewModel _selectedList;
 
-        public MainListItems(EasyList selectedList)
+        public MainListItems(EasyListViewModel selectedList)
         {
             InitializeComponent();
 
@@ -31,6 +31,7 @@ namespace PackListApp
         private void UpdateTitle()
         {
             TitleLabel.Text = $"{_selectedList.GetPackedItems()} / {_selectedList.GetTotalItems()}";
+            _selectedList.QuantityText = $"{_selectedList.GetPackedItems()} / {_selectedList.GetTotalItems()}";
         }
 
         private async void Delete_OnClicked(object sender, EventArgs e)
