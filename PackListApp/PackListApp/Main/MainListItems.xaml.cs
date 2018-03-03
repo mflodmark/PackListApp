@@ -27,8 +27,13 @@ namespace PackListApp
             MainListItemsListView.ItemsSource = _selectedList.Items;
         }
 
-        private void Delete_OnClicked(object sender, EventArgs e)
+        private async void Delete_OnClicked(object sender, EventArgs e)
         {
+            var response = await DisplayAlert("Warning", "Are you sure?", "Yes", "No");
+            if (!response) return;
+
+            var selected = (sender as MenuItem)?.CommandParameter as ListItemViewModel;
+            _selectedList.Items.Remove(selected);
 
         }
 
