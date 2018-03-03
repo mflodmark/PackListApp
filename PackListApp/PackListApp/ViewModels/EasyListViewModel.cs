@@ -1,4 +1,5 @@
 ﻿using System.Collections.ObjectModel;
+using System.Linq;
 using PackListApp.Models;
 
 namespace PackListApp.ViewModels
@@ -11,7 +12,7 @@ namespace PackListApp.ViewModels
         {
             _easyList = easyList;
             Title = easyList.Title;
-            Packed = easyList.EasyPacked;
+            EasyPacked = easyList.EasyPacked;
             Items = easyList.Items;
             QuantityText = easyList.QuantityText;
         }
@@ -24,12 +25,12 @@ namespace PackListApp.ViewModels
             set => SetValue(ref _title, value);
         }
 
-        private bool _packed;
+        private bool _easyPacked;
 
-        public bool Packed
+        public bool EasyPacked
         {
-            get => _packed;
-            set => SetValue(ref _packed, value);
+            get => _easyPacked;
+            set => SetValue(ref _easyPacked, GetPackedItems() == GetTotalItems());
         }
         
         private string _quantityText;
@@ -37,7 +38,7 @@ namespace PackListApp.ViewModels
         public string QuantityText
         {
             get => _quantityText;
-            set => SetValue(ref _quantityText, value);
+            set => SetValue(ref _quantityText, $"{GetPackedItems()} / {GetTotalItems()}");
         }
 
         private ObservableCollection<ListItemViewModel> _items;
@@ -52,6 +53,18 @@ namespace PackListApp.ViewModels
         {
             get => _title;
             set => SetValue(ref _title, value);
+        }
+
+        public int GetPackedItems()
+        {
+            var packedItems = Items.Where(p => p.Packed).ToList().Count;
+
+            return packedItems;
+        }
+
+        public int GetTotalItems()
+        {
+            return Items.Count;
         }
 
 
