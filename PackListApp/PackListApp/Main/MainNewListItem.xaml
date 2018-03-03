@@ -8,9 +8,16 @@
             <Button Text="Cancel" HorizontalOptions="FillAndExpand" Style="{StaticResource CancelButtonTheme}"
                     CornerRadius="0" Clicked="Cancel_OnClicked"></Button>
             <StackLayout  VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand">
+                HorizontalOptions="CenterAndExpand" Spacing="20">
                 <Label Text="Enter new list item name" TextColor="{StaticResource OptionTextColor}"/>
                 <Entry Text="{Binding Item}" Placeholder="Name..." TextChanged="Entry_TextChanged"></Entry>
+                <StackLayout Orientation="Horizontal" Spacing="10" HorizontalOptions="CenterAndExpand" 
+                             VerticalOptions="CenterAndExpand">
+                    <Label Text="{Binding Source={x:Reference Stepper}, Path=Value}"
+                           TextColor="{StaticResource OptionTextColor}"></Label>
+                    <Stepper x:Name="Stepper" Minimum="1" 
+                             ></Stepper>
+                </StackLayout>
             </StackLayout>
             <Button Text="Done" HorizontalOptions="FillAndExpand" Style="{StaticResource ButtonTheme}"
                     CornerRadius="0" Clicked="Done_Clicked"></Button>

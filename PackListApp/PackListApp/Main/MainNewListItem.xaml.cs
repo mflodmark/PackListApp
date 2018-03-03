@@ -13,7 +13,7 @@ namespace PackListApp
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class MainNewListItem : ContentPage
 	{
-	    private ListItemViewModel _item;
+	    private readonly ListItemViewModel _item;
 	    private readonly EasyList _selectedList;
 	    private readonly bool _editItem;
 
@@ -23,19 +23,26 @@ namespace PackListApp
 
 		    _selectedList = selectedList;
 
-		    _item = listItem ?? new ListItemViewModel() {Item = ""};
+		    _item = listItem ?? new ListItemViewModel() {Item = "", Quantity = 0};
 		    _editItem = listItem != null;
+
+            if (listItem != null)
+		    {
+		        Stepper.Value = listItem.Quantity;
+            }
 
             BindingContext = _item;
 		}
 
         private void Entry_TextChanged(object sender, TextChangedEventArgs e)
         {
-            _item = new ListItemViewModel() {Item = e.NewTextValue}; 
+            _item.Item = e.NewTextValue; 
         }
 
         private async void Done_Clicked(object sender, EventArgs e)
         {
+            _item.Quantity = (int) Stepper.Value;
+
             if (_item.Item.Replace(" ", "").Length == 0)
             {
                 await DisplayAlert("Missing value", "Enter name", "Ok");
