@@ -75,7 +75,7 @@ namespace PackListApp
 
 	    private async void Add_OnClicked(object sender, EventArgs e)
 	    {
-            //await Navigation.PushAsync(new NewList(_easyLists));
+            await Navigation.PushAsync(new NewList(_easyLists));
         }
 	}
 }

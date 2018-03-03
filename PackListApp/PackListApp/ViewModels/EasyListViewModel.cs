@@ -6,6 +6,11 @@ namespace PackListApp.ViewModels
 {
     public class EasyListViewModel: BaseViewModel
     {
+        public EasyListViewModel()
+        {
+            
+        }
+
         public EasyListViewModel(EasyList easyList)
         {
             Title = easyList.Title;

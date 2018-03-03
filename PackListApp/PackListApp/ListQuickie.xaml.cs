@@ -14,10 +14,10 @@ namespace PackListApp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class ListQuickie : ContentPage
     {
-        private readonly ObservableCollection<EasyList> _quickies;
+        private readonly ObservableCollection<EasyListViewModel> _quickies;
         private string _titel = "";
 
-        public ListQuickie(ObservableCollection<EasyList> quickies)
+        public ListQuickie(ObservableCollection<EasyListViewModel> quickies)
         {
             InitializeComponent();
 
@@ -46,7 +46,7 @@ namespace PackListApp
                 }
                 else
                 {
-                    var quickie = new EasyList();
+                    var quickie = new EasyListViewModel();
 
                     var list = new ObservableCollection<ListItemViewModel>()
                     {

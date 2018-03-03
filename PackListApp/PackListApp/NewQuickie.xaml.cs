@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using PackListApp.Models;
+using PackListApp.ViewModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -13,9 +14,9 @@ namespace PackListApp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class NewQuickie : ContentPage
     {
-        private readonly ObservableCollection<EasyList> _quickies;
+        private readonly ObservableCollection<EasyListViewModel> _quickies;
 
-        public NewQuickie(ObservableCollection<EasyList> quickies)
+        public NewQuickie(ObservableCollection<EasyListViewModel> quickies)
         {
             InitializeComponent();
 
