@@ -56,6 +56,7 @@ namespace PackListApp
 
                     quickie.Items = list;
                     quickie.Title = _titel;
+                    quickie.QuantityText = $"{quickie.GetPackedItems()} / {quickie.GetTotalItems()}";
 
                     _quickies.Add(quickie);
 

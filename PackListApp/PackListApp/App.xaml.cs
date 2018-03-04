@@ -14,7 +14,7 @@ namespace PackListApp
 {
 	public partial class App : Application
 	{
-	    private const string mainListKey = "MainList";
+	    private const string MainListKey = "MainList";
 
 		public App ()
 		{
@@ -56,23 +56,23 @@ namespace PackListApp
 	    private ObservableCollection<EasyListViewModel> GetMainList()
 	    {
 	        ObservableCollection<EasyListViewModel> mainList;
-	        if (Properties[mainListKey] == null)
+	        if (Properties.ContainsKey(MainListKey))
 	        {
-	            mainList = new ObservableCollection<EasyListViewModel>();
-	        }
+	            var serializedValue = Properties[MainListKey].ToString();
+	            mainList = JsonConvert.DeserializeObject<ObservableCollection<EasyListViewModel>>(serializedValue);
+            }
 	        else
 	        {
-	            var serializedValue = Properties[mainListKey].ToString();
-	            mainList = JsonConvert.DeserializeObject<ObservableCollection<EasyListViewModel>>(serializedValue);
-	        }
+                mainList = new ObservableCollection<EasyListViewModel>();
+            }
 
-	        return mainList;
+            return mainList;
 	    }
 
 	    private void SetMainList(ObservableCollection<EasyListViewModel> newMainList)
 	    {
 	        var temp = JsonConvert.SerializeObject(newMainList);
-	        Properties[mainListKey] = temp;
+	        Properties[MainListKey] = temp;
 
 	    }
     }

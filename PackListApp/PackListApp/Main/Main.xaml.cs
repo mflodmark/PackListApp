@@ -20,9 +20,12 @@ namespace PackListApp
         {
             InitializeComponent();
 
-            _easyLists = GetQuickies();
+            //_easyLists = GetQuickies();
+
+            if (Application.Current is App app) _easyLists = app.MainList;
             MainListView.ItemsSource = _easyLists;
-            //BindingContext = _easyLists;
+
+            BindingContext = Application.Current;
         }
 
 

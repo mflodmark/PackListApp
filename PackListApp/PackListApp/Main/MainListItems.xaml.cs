@@ -31,7 +31,7 @@ namespace PackListApp
         private void UpdateTitle()
         {
             TitleLabel.Text = $"{_selectedList.GetPackedItems()} / {_selectedList.GetTotalItems()}";
-            _selectedList.QuantityText = $"{_selectedList.GetPackedItems()} / {_selectedList.GetTotalItems()}";
+            _selectedList.QuantityText = TitleLabel.Text;
             _selectedList.EasyPacked = _selectedList.GetPackedItems() == _selectedList.GetTotalItems();
         }
         

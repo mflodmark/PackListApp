@@ -49,6 +49,7 @@ namespace PackListApp
             }
             else if (_editItem)
             {
+                
                 await Navigation.PopModalAsync();
             }
             else if (_editItem == false)
