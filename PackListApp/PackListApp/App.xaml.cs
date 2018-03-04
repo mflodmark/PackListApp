@@ -1,16 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using Microsoft.AppCenter;
 using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
+using Newtonsoft.Json;
+using PackListApp.ViewModels;
 using Xamarin.Forms;
 
 namespace PackListApp
 {
 	public partial class App : Application
 	{
+	    private const string mainListKey = "MainList";
+
 		public App ()
 		{
 			InitializeComponent();
@@ -41,5 +46,34 @@ namespace PackListApp
 		{
 			// Handle when your app resumes
 		}
-	}
+
+	    public ObservableCollection<EasyListViewModel> MainList
+	    {
+	        get => GetMainList();
+	        set => SetMainList(value);
+	    }
+
+	    private ObservableCollection<EasyListViewModel> GetMainList()
+	    {
+	        ObservableCollection<EasyListViewModel> mainList;
+	        if (Properties[mainListKey] == null)
+	        {
+	            mainList = new ObservableCollection<EasyListViewModel>();
+	        }
+	        else
+	        {
+	            var serializedValue = Properties[mainListKey].ToString();
+	            mainList = JsonConvert.DeserializeObject<ObservableCollection<EasyListViewModel>>(serializedValue);
+	        }
+
+	        return mainList;
+	    }
+
+	    private void SetMainList(ObservableCollection<EasyListViewModel> newMainList)
+	    {
+	        var temp = JsonConvert.SerializeObject(newMainList);
+	        Properties[mainListKey] = temp;
+
+	    }
+    }
 }

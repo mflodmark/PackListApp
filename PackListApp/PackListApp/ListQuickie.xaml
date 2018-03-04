@@ -6,7 +6,31 @@
     <ContentPage.Content>
         <StackLayout>
             <Entry Placeholder="Enter list name..." TextChanged="Entry_OnTextChanged" ></Entry>
-
+            <StackLayout Orientation="Horizontal" Padding="13, 5">
+                <StackLayout Orientation="Vertical">
+                    <Image Source="icons8-standing-man-filled-50.png"></Image>
+                    <Label Text="{Binding Source={x:Reference StepperMan}, Path=Value}"
+                           TextColor="{StaticResource OptionTextColor}" HorizontalOptions="Center"></Label>
+                    <Stepper x:Name="StepperMan"></Stepper>
+                </StackLayout>
+                <StackLayout Orientation="Vertical">
+                    <Image Source="icons8-women-filled-50.png"></Image>
+                    <Label Text="{Binding Source={x:Reference StepperWoman}, Path=Value}"
+                           TextColor="{StaticResource OptionTextColor}" HorizontalOptions="Center"></Label>
+                    <Stepper x:Name="StepperWoman"></Stepper>
+                </StackLayout>
+                <StackLayout Orientation="Vertical">
+                    <Image Source="icons8-boy-filled-50.png"></Image>
+                    <Label Text="{Binding Source={x:Reference StepperChildren}, Path=Value}"
+                           TextColor="{StaticResource OptionTextColor}" HorizontalOptions="Center"></Label>
+                    <Stepper x:Name="StepperChildren"></Stepper>
+                </StackLayout>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Padding="13, 5"   
+                         BackgroundColor="{StaticResource TitleColor}">
+                <Label Text="Default items" Style="{StaticResource LabelListView}" HorizontalOptions="CenterAndExpand"></Label>
+            </StackLayout>
+            
             <ListView x:Name="QuickieListView" Style="{StaticResource ColorTheme}" 
                       SeparatorColor="{StaticResource ListSeperatorColor}">
                 <ListView.ItemTemplate>
