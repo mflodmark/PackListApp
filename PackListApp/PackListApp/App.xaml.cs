@@ -69,10 +69,11 @@ namespace PackListApp
             return mainList;
 	    }
 
-	    private void SetMainList(ObservableCollection<EasyListViewModel> newMainList)
+	    private async void SetMainList(ObservableCollection<EasyListViewModel> newMainList)
 	    {
 	        var temp = JsonConvert.SerializeObject(newMainList);
 	        Properties[MainListKey] = temp;
+	        await SavePropertiesAsync();
 
 	    }
     }

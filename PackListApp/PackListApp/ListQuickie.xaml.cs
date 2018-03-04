@@ -60,6 +60,8 @@ namespace PackListApp
 
                     _quickies.Add(quickie);
 
+                    //if (Application.Current is App app) app.MainList = _quickies;
+
                     await Navigation.PopToRootAsync();
                 }
             }
